@@ -1,6 +1,7 @@
 import { Submission } from "../../domain/entities/submission"
 import { StundentRepository } from "../repositories/StudentsRepository";
 import { ChallengeRepository } from "../repositories/ChallengesRepository";
+import { generated_props } from '../../../tests/repositories/in-memory-hash';
 
 type CreateChallengeSubmissionRequest = {
   studentId: string;
@@ -25,7 +26,7 @@ export class CreateChallengeSubmission {
     const submission = Submission.create({
       studentId,
       challengeId
-    }, '_id-ashdgasjhgdshja')
+    }, generated_props())
 
     return submission
   }
